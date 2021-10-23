@@ -1,6 +1,6 @@
 <template>
   <div class="init_page">
-    <div class="init_page_panle">
+    <div class="init_page_panel">
       <div v-if="hello < 2" id="hello" :class="[hello < 1 ? 'slide-in-fwd-top' : 'slide-out-right']" class="hello  ">
         <div>
           <div class="hello_title">vue-admin</div>
@@ -93,7 +93,7 @@ export default {
             type: 'success',
             message: res.msg
           })
-          await this.$router.push({ name: 'Login' })
+          this.$router.push({ name: 'Login' })
         }
         loading.close()
       } catch (err) {
@@ -113,7 +113,7 @@ export default {
   width: 100%;
   height: 100%;
   position: relative;
-  .init_page_panle{
+  .init_page_panel{
     position: absolute;
     top: 3vh;
     left: 2vw;

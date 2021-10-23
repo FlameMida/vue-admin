@@ -26,15 +26,13 @@
           </div>
           <div>
             <div class="gva-top-card-left-item">
-              使用教学：
               <a
                 style="color:#409EFF"
                 target="view_window"
-                href="https://www.bilibili.com/video/BV1Rg411u7xH/"
-              >https://www.bilibili.com/video/BV1Rg411u7xH</a>
+                href="#"
+              >#</a>
             </div>
             <div class="gva-top-card-left-item">
-              插件仓库：
               <a
                 style="color:#409EFF"
                 target="view_window"
@@ -83,9 +81,6 @@
             <el-col :xs="24" :sm="18">
               <echarts-line />
             </el-col>
-            <el-col :xs="24" :sm="6">
-              <dashbord-table />
-            </el-col>
           </el-row>
         </div>
       </div>
@@ -94,12 +89,11 @@
 </template>
 <script>
 import echartsLine from '@/view/dashboard/dashbordCharts/echartsLine.vue'
-import dashbordTable from '@/view/dashboard/dashbordTable/dashbordTable.vue'
+
 export default {
   name: 'Dashboard',
   components: {
-    echartsLine,
-    dashbordTable
+    echartsLine
   },
   data() {
     return {
@@ -125,27 +119,6 @@ export default {
           color: '#b37feb',
           bg: 'rgba(179, 127, 235,.3)'
         },
-        {
-          label: '代码生成器',
-          icon: ' el-icon-cpu',
-          name: 'autoCode',
-          color: '#ffd666',
-          bg: 'rgba(255, 214, 102,.3)'
-        },
-        {
-          label: '表单生成器',
-          icon: 'el-icon-document-checked',
-          name: 'formCreate',
-          color: '#ff85c0',
-          bg: 'rgba(255, 133, 192,.3)'
-        },
-        {
-          label: '关于我们',
-          icon: ' el-icon-user',
-          name: 'about',
-          color: '#5cdbd3',
-          bg: 'rgba(92, 219, 211,.3)'
-        }
       ]
     }
   },
@@ -168,7 +141,7 @@ export default {
     .gva-card-box{
       padding: 12px 16px;
       &+.gva-card-box{
-        padding-top: 0px;
+        padding-top: 0;
       }
     }
     .gva-card {
@@ -245,7 +218,7 @@ export default {
           border-radius: 4px;
           transition: all 0.2s;
           &:hover{
-            box-shadow: 0px 0px 7px 0px rgba(217, 217, 217, 0.55);
+            box-shadow: 0 0 7px 0 rgba(217, 217, 217, 0.55);
           }
             cursor: pointer;
             height: auto;

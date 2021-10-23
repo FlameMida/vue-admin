@@ -87,31 +87,6 @@
       </el-form-item>
       <!--  Redis end  -->
 
-      <!--  Email start  -->
-      <h2>邮箱配置</h2>
-      <el-form-item label="接收者邮箱">
-        <el-input v-model="config.email.to" placeholder="可多个，以逗号分隔" />
-      </el-form-item>
-      <el-form-item label="端口">
-        <el-input v-model.number="config.email.port" />
-      </el-form-item>
-      <el-form-item label="发送者邮箱">
-        <el-input v-model="config.email.from" />
-      </el-form-item>
-      <el-form-item label="host">
-        <el-input v-model="config.email.host" />
-      </el-form-item>
-      <el-form-item label="是否为ssl">
-        <el-checkbox v-model="config.email.isSSL" />
-      </el-form-item>
-      <el-form-item label="secret">
-        <el-input v-model="config.email.secret" />
-      </el-form-item>
-      <el-form-item label="测试邮件">
-        <el-button @click="email">测试邮件</el-button>
-      </el-form-item>
-      <!--  Email end  -->
-
       <!--  Casbin start  -->
       <h2>casbin配置</h2>
       <el-form-item label="模型地址">
@@ -309,7 +284,6 @@
 
 <script>
 import { getSystemConfig, setSystemConfig } from '@/api/system'
-import { emailTest } from '@/api/email'
 export default {
   name: 'Config',
   data() {
@@ -327,7 +301,6 @@ export default {
         captcha: {},
         zap: {},
         local: {},
-        email: {}
       }
     }
   },
@@ -350,21 +323,6 @@ export default {
           message: '配置文件设置成功'
         })
         await this.initForm()
-      }
-    },
-    async email() {
-      const res = await emailTest()
-      if (res.code === 0) {
-        this.$message({
-          type: 'success',
-          message: '邮件发送成功'
-        })
-        await this.initForm()
-      } else {
-        this.$message({
-          type: 'error',
-          message: '邮件发送失败'
-        })
       }
     }
   }

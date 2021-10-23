@@ -6,7 +6,7 @@ import zhCn from 'element-plus/es/locale/lang/zh-cn'
 // 引入vue-admin前端初始化相关内容
 import './core/vue-admin'
 // 引入封装的router
-import router from '@/router/index'
+import router from '@/router/index.js'
 import run from '@/core/vue-admin.js'
 import auth from '@/directive/auth'
 

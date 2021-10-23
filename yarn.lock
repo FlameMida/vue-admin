@@ -6125,47 +6125,6 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"vue-admin@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "vue-admin@workspace:."
-  dependencies:
-    "@element-plus/icons": 0.0.11
-    "@vitejs/plugin-legacy": ^1.6.2
-    "@vitejs/plugin-vue": ^1.9.3
-    "@vue/cli-plugin-babel": ~4.5.14
-    "@vue/cli-plugin-eslint": ~4.5.14
-    "@vue/cli-plugin-router": ~4.5.14
-    "@vue/cli-plugin-vuex": ~4.5.14
-    "@vue/cli-service": ~4.5.14
-    "@vue/compiler-sfc": ^3.2.20
-    axios: ^0.23.0
-    babel-eslint: ^10.1.0
-    babel-plugin-import: ^1.13.3
-    core-js: ^3.18.3
-    dotenv: ^10.0.0
-    echarts: 5.2.1
-    element-plus: ^1.1.0-beta.24
-    eslint: ^6.8.0
-    eslint-plugin-vue: ^7.20.0
-    mitt: ^3.0.0
-    path: ^0.12.7
-    qs: ^6.10.1
-    quill: ^1.3.7
-    sass: ^1.43.3
-    sass-loader: ^12.2.0
-    screenfull: ^5.1.0
-    script-ext-html-webpack-plugin: ^2.1.5
-    spark-md5: ^3.0.2
-    vite: 2.6.9
-    vite-plugin-importer: ^0.2.5
-    vue: ^3.2.20
-    vue-particle-line: ^0.1.4
-    vue-router: ^4.0.12
-    vuex: ^4.0.2
-    vuex-persist: ^3.1.3
-  languageName: unknown
-  linkType: soft
-
 "glob-parent@npm:^3.1.0":
   version: 3.1.0
   resolution: "glob-parent@npm:3.1.0"
@@ -10282,6 +10241,16 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
+"requirejs@npm:^2.3.6":
+  version: 2.3.6
+  resolution: "requirejs@npm:2.3.6"
+  bin:
+    r.js: ./bin/r.js
+    r_js: ./bin/r.js
+  checksum: 7c3c006bf5e1887d93ac7adb7f600328918d23cf3d28282a505a2873d4ddde499c7ec560e55cee3440d17fe1205cb4dcb72b07f35b39e8940372eca850e49b62
+  languageName: node
+  linkType: hard
+
 "requires-port@npm:^1.0.0":
   version: 1.0.0
   resolution: "requires-port@npm:1.0.0"
@@ -12119,9 +12088,9 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"vite@npm:2.6.9":
-  version: 2.6.9
-  resolution: "vite@npm:2.6.9"
+"vite@npm:2.6.10":
+  version: 2.6.10
+  resolution: "vite@npm:2.6.10"
   dependencies:
     esbuild: ^0.13.2
     fsevents: ~2.3.2
@@ -12144,7 +12113,7 @@ fsevents@~2.3.2:
       optional: true
   bin:
     vite: bin/vite.js
-  checksum: 52e42c75948fd86377452d087113523fdec5be2b653223d4e3c6135a0d07aed743ec587dc5b91fc674508d5d5cf80edb73b932fac7625c7ea8d16b07ea067c4e
+  checksum: 802b59c275ac099d6cfcf17636d1034cb6d3e7a363a33a4bf990cbe859059cec35249e958a26a59d5cfde3dbbbf207b8ac8817eb127063c96957d2e573389370
   languageName: node
   linkType: hard
 
@@ -12154,6 +12123,48 @@ fsevents@~2.3.2:
   checksum: 10a1c50aab54ff8b4c9042c15fc64aefccce8d2fb90c0640403242db0ee7fb269f9b102bdb69cfb435d7ef3180d61fd4fb004a043a12709abaf9056cfd7e039d
   languageName: node
   linkType: hard
+
+"vue-admin@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "vue-admin@workspace:."
+  dependencies:
+    "@element-plus/icons": 0.0.11
+    "@vitejs/plugin-legacy": ^1.6.2
+    "@vitejs/plugin-vue": ^1.9.3
+    "@vue/cli-plugin-babel": ~4.5.14
+    "@vue/cli-plugin-eslint": ~4.5.14
+    "@vue/cli-plugin-router": ~4.5.14
+    "@vue/cli-plugin-vuex": ~4.5.14
+    "@vue/cli-service": ~4.5.14
+    "@vue/compiler-sfc": ^3.2.20
+    axios: ^0.23.0
+    babel-eslint: ^10.1.0
+    babel-plugin-import: ^1.13.3
+    core-js: ^3.18.3
+    dotenv: ^10.0.0
+    echarts: 5.2.1
+    element-plus: ^1.1.0-beta.24
+    eslint: ^6.8.0
+    eslint-plugin-vue: ^7.20.0
+    mitt: ^3.0.0
+    path: ^0.12.7
+    qs: ^6.10.1
+    quill: ^1.3.7
+    requirejs: ^2.3.6
+    sass: ^1.43.3
+    sass-loader: ^12.2.0
+    screenfull: ^5.1.0
+    script-ext-html-webpack-plugin: ^2.1.5
+    spark-md5: ^3.0.2
+    vite: 2.6.10
+    vite-plugin-importer: ^0.2.5
+    vue: ^3.2.20
+    vue-particle-line: ^0.1.4
+    vue-router: ^4.0.12
+    vuex: ^4.0.2
+    vuex-persist: ^3.1.3
+  languageName: unknown
+  linkType: soft
 
 "vue-demi@npm:*":
   version: 0.11.4

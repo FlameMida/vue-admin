@@ -95,7 +95,7 @@
               <p>确定要删除吗？</p>
               <div style="text-align: right; margin-top: 8px;">
                 <el-button size="mini" type="text" @click="scope.row.visible = false">取消</el-button>
-                <el-button size="mini" type="primary" @click="deleteSysOperationRecord(scope.row)">确定</el-button>
+                <el-button size="mini" type="primary" @click="deleteOperations(scope.row)">确定</el-button>
               </div>
               <template #reference>
                 <el-button icon="el-icon-delete" size="mini" type="text">删除</el-button>
@@ -121,18 +121,18 @@
 
 <script>
 import {
-  deleteSysOperationRecord,
-  getSysOperationRecordList,
-  deleteSysOperationRecordByIds
-} from '@/api/sysOperationRecord' // 此处请自行替换地址
+  deleteOperations,
+  getOperationsList,
+  deleteOperationsByIds
+} from '@/api/operations' // 此处请自行替换地址
 import infoList from '@/mixins/infoList'
 
 export default {
-  name: 'SysOperationRecord',
+  name: 'Operations',
   mixins: [infoList],
   data() {
     return {
-      listApi: getSysOperationRecordList,
+      listApi: getOperationsList,
       dialogFormVisible: false,
       type: '',
       deleteVisible: false,
@@ -171,7 +171,7 @@ export default {
         this.multipleSelection.forEach(item => {
           ids.push(item.ID)
         })
-      const res = await deleteSysOperationRecordByIds({ ids })
+      const res = await deleteOperationsByIds({ ids })
       if (res.code === 0) {
         this.$message({
           type: 'success',
@@ -184,9 +184,9 @@ export default {
         this.getTableData()
       }
     },
-    async deleteSysOperationRecord(row) {
+    async deleteOperations(row) {
       row.visible = false
-      const res = await deleteSysOperationRecord({ ID: row.ID })
+      const res = await deleteOperations({ ID: row.ID })
       if (res.code === 0) {
         this.$message({
           type: 'success',

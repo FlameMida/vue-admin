@@ -65,7 +65,7 @@
 <script>
 import screenfull from 'screenfull' // 引入screenfull
 export default {
-  name: 'ScreenFull',
+  name: 'Screenfull',
   props: {
     width: {
       type: Number,

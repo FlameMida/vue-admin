@@ -1,23 +1,23 @@
 <template>
-  <div class="dashbord-line-box">
-    <div class="dashbord-line-title">
+  <div class="dashboard-line-box">
+    <div class="dashboard-line-title">
       访问趋势
     </div>
     <div
       ref="echart"
-      class="dashbord-line"
+      class="dashboard-line"
     />
   </div>
 </template>
 <script>
-import echarts from 'echarts'
+import * as echarts from 'echarts'
 import 'echarts/theme/macarons'
 
-var dataAxis = []
-for (var i = 1; i < 13; i++) {
+const dataAxis = []
+for (let i = 1; i < 13; i++) {
   dataAxis.push(`${i}月`)
 }
-var data = [
+const data = [
   220,
   182,
   191,
@@ -31,11 +31,11 @@ var data = [
   90,
   149,
 ]
-var yMax = 500
-var dataShadow = []
+const yMax = 500
+const dataShadow = []
 
 // eslint-disable-next-line no-redeclare
-for (var i = 0; i < data.length; i++) {
+for (let i = 0; i < data.length; i++) {
   dataShadow.push(yMax)
 }
 
@@ -121,13 +121,13 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.dashbord-line-box {
-  .dashbord-line {
+.dashboard-line-box {
+  .dashboard-line {
     background-color: #fff;
     height: 360px;
     width: 100%;
   }
-  .dashbord-line-title {
+  .dashboard-line-title {
     font-weight: 600;
     margin-bottom: 12px;
   }

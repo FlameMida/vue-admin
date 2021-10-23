@@ -1,5 +1,5 @@
 import router from './router'
-import { store } from '@/store/index.js'
+import { store } from '@/store/index'
 import getPageTitle from '@/utils/page'
 let asyncRouterFlag = 0
 

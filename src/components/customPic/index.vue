@@ -2,14 +2,15 @@
   <span class="headerAvatar">
     <template v-if="picType === 'avatar'">
       <el-avatar v-if="userInfo.headerImg" :size="24" :src="avatar" />
-      <el-avatar v-else :size="24" :src="require('@/assets/noBody.png')" />
+      <!--      todo 头像引入问题-->
+      <el-avatar v-else :size="24" src="@/assets/noBody.png" />
     </template>
     <template v-if="picType === 'img'">
-      <img v-if="userInfo.headerImg" :src="avatar" class="avatar">
-      <img v-else :src="require('@/assets/noBody.png')" class="avatar">
+      <img v-if="userInfo.headerImg" :src="avatar" class="avatar" alt="">
+      <img v-else src="@/assets/noBody.png" class="avatar" alt="">
     </template>
     <template v-if="picType === 'file'">
-      <img :src="file" class="file">
+      <img :src="file" class="file" alt="">
     </template>
   </span>
 </template>
