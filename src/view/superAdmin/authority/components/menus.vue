@@ -98,7 +98,7 @@ export default {
       const checkArr = this.$refs.menuTree.getCheckedNodes(false, true)
       const res = await addMenuAuthority({
         menus: checkArr,
-        authorityId: this.row.authorityId
+        authority_id: this.row.authorityId
       })
       if (res.code === 0) {
         this.$message({
