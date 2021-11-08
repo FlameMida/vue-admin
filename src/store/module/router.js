@@ -21,7 +21,11 @@ const KeepAliveFilter = (routes) => {
   routes && routes.forEach(item => {
     // 子菜单中有 keep-alive 的，父菜单也必须 keep-alive，否则无效。这里将子菜单中有 keep-alive 的父菜单也加入。
     if ((item.children && item.children.some(ch => ch.meta.keepAlive) || item.meta.keepAlive)) {
-      item.component().then(val => { keepAliveRouters.push(val.default.name) })
+      if (item.component !== undefined) {
+        item.component().then(val => {
+          keepAliveRouters.push(val.default.name)
+        })
+      }
     }
     if (item.children && item.children.length > 0) {
       KeepAliveFilter(item.children)
@@ -34,7 +38,7 @@ export const router = {
   state: {
     asyncRouters: [],
     routerList: routerList,
-    keepAliveRouters: keepAliveRouters
+    keepAliveRouters: keepAliveRouters,
   },
   mutations: {
     setRouterList(state, routerList) {
@@ -47,7 +51,7 @@ export const router = {
     // 设置需要缓存的路由
     setKeepAliveRouters(state, keepAliveRouters) {
       state.keepAliveRouters = keepAliveRouters
-    }
+    },
   },
   actions: {
     // 从后台获取动态路由
@@ -57,9 +61,9 @@ export const router = {
         name: 'layout',
         component: 'view/layout/index.vue',
         meta: {
-          title: '底层layout'
+          title: '底层layout',
         },
-        children: []
+        children: [],
       }]
       const asyncRouterRes = await asyncMenu()
       const asyncRouter = asyncRouterRes.data.menus
@@ -70,13 +74,13 @@ export const router = {
         meta: {
           title: '迷路了*。*',
         },
-        component: 'view/error/index.vue'
+        component: 'view/error/index.vue',
       })
       formatRouter(asyncRouter)
       baseRouter[0].children = asyncRouter
       baseRouter.push({
         path: '/:catchAll(.*)',
-        redirect: '/layout/404'
+        redirect: '/layout/404',
 
       })
       asyncRouterHandle(baseRouter)
@@ -85,7 +89,7 @@ export const router = {
       commit('setRouterList', routerList)
       commit('setKeepAliveRouters', keepAliveRouters)
       return true
-    }
+    },
   },
   getters: {
     // 获取动态路由
@@ -97,6 +101,6 @@ export const router = {
     },
     keepAliveRouters(state) {
       return state.keepAliveRouters
-    }
-  }
+    },
+  },
 }
